@@ -41,7 +41,8 @@ export const Flights = () => {
 
   return (
       <>
-    <Box
+      <h1>FLIGHT DETAILS</h1>
+    <Box className='box'
       component="form"
       sx={{
         '& > :not(style)': { m: 1, width: '25ch' },
@@ -118,7 +119,7 @@ export const Flights = () => {
 
 
     <Stack spacing={2} direction="row">
-      <Button onClick={HandleSubmit} variant="contained">Contained</Button>
+      <Button id='button' onClick={HandleSubmit} variant="contained">Contained</Button>
     </Stack>
 
 

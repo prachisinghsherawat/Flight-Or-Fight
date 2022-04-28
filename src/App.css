@@ -1,15 +1,15 @@
 .navbar{
   height: 70px;
   color: white;
+  margin-bottom: 3%;
   background-color: rgb(197, 221, 209);
 }
 
 .box{
-  width: 70%;
+  width: 60%;
   margin: auto;
-  margin-top: 4%;
+  padding: 2% 4%;
   text-align: center;
-  border: 2px solid black;
 }
 
 #button{
@@ -18,4 +18,8 @@
   font-size: 17px;
   margin: auto;
   margin-top: 2%;
+}
+
+h1{
+  text-align: center;
 }
