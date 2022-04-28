@@ -3,17 +3,26 @@ import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
+import axios from "axios"
 
 export function AddAirports() {
 
-    const [airport , setAirport] = React.useState({
+    const [airports , setAirports] = React.useState({
+        imgUrl : "",
         airport : ""
     });
 
     const HandleChange = (e) =>{
 
         const {id , value} = e.target;
-        setAirport({...airport , [id] : value})
+        setAirports({...airports , [id] : value})
+    }
+    console.log(airports)
+
+    const HandleSubmit = () =>{
+        axios.post("http://localhost:8080/airports",airports).then((res)=>{
+            localStorage.setItem("airportsData" , JSON.stringify(res.data._id) )
+        })
     }
   
 
@@ -27,6 +36,14 @@ export function AddAirports() {
       noValidate
       autoComplete="off"
     >
+
+       <TextField
+        id="imgUrl"
+        label="Image URL"
+        // value={name}
+        onChange={HandleChange}
+      />
+
       <TextField
         id="airport"
         label="Add Airport"
@@ -39,7 +56,7 @@ export function AddAirports() {
 
 
     <Stack spacing={2} direction="row">
-      <Button variant="contained">Contained</Button>
+      <Button onClick={HandleSubmit} variant="contained">Contained</Button>
     </Stack>
 
 

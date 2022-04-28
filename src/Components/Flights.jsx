@@ -4,12 +4,17 @@ import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { useState } from "react"
+import axios from 'axios';
 
 
 export const Flights = () => {
 
-    const [flight , setFlight] = useState({
-        
+    const id = JSON.parse(localStorage.getItem("airportsData"));
+    console.log(id)
+
+    const [flights , setFlights] = useState({
+
+        imgUrl : "",
         airline : "",
         startPoint : "",
         endPoint : "",
@@ -17,14 +22,20 @@ export const Flights = () => {
         startTime : "",
         endTime : "",
         pnr : "",
-        capacity : ""
+        capacity : "",
+        airport_id : id
 
     })
 
     const HandleChange = (e) =>{
 
         const {id , value} = e.target;
-        setFlight({...flight , [id] : value})
+        setFlights({...flights , [id] : value})
+    }
+
+    const HandleSubmit = ()=>{
+
+        axios.post("http://localhost:8080/airports/flights",flights).then((res) => console.log(res.data))
     }
   
 
@@ -38,6 +49,13 @@ export const Flights = () => {
       noValidate
       autoComplete="off"
     >
+
+        <TextField
+        id="imgUrl"
+        label="Image URL"
+        // value={name}
+        onChange={HandleChange}
+      />
 
         <TextField
         id="airline"
@@ -100,7 +118,7 @@ export const Flights = () => {
 
 
     <Stack spacing={2} direction="row">
-      <Button variant="contained">Contained</Button>
+      <Button onClick={HandleSubmit} variant="contained">Contained</Button>
     </Stack>
 
 
