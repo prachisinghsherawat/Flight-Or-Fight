@@ -28,7 +28,7 @@ export function AddAirports() {
 
   return (
       <>
-    <Box
+    <Box className='box'
       component="form"
       sx={{
         '& > :not(style)': { m: 1, width: '25ch' },
@@ -56,7 +56,7 @@ export function AddAirports() {
 
 
     <Stack spacing={2} direction="row">
-      <Button onClick={HandleSubmit} variant="contained">Contained</Button>
+      <Button id='button' onClick={HandleSubmit} variant="contained">Contained</Button>
     </Stack>
 
 

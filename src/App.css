@@ -3,3 +3,19 @@
   color: white;
   background-color: rgb(197, 221, 209);
 }
+
+.box{
+  width: 70%;
+  margin: auto;
+  margin-top: 4%;
+  text-align: center;
+  border: 2px solid black;
+}
+
+#button{
+  text-align: center;
+  padding: 10px 18px;
+  font-size: 17px;
+  margin: auto;
+  margin-top: 2%;
+}
