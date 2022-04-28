@@ -28,7 +28,9 @@ export function AddAirports() {
 
   return (
       <>
-      <h1>AIRPORT DETAILS</h1>
+
+    <h1 className='head'>AIRPORT DETAILS</h1>
+      
     <Box className='box'
       component="form"
       sx={{

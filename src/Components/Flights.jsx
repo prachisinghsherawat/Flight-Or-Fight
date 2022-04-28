@@ -41,7 +41,7 @@ export const Flights = () => {
 
   return (
       <>
-      <h1>FLIGHT DETAILS</h1>
+      <h1 className='head'>FLIGHT DETAILS</h1>
     <Box className='box'
       component="form"
       sx={{
