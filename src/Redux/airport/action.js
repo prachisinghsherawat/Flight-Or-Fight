@@ -20,9 +20,9 @@ export const AirportError = () => ({
     type : AIRPORT_ERROR
 });
 
-export const AirportData = () => () => {
+export const AirportData = () => (dispatch) => {
 
     AirportLoading();
-    axios.get("http://localhost:8080/airports").then((res)=>{AirportSuccess(res.data)})
+    axios.get("http://localhost:8080/airports").then((res)=>{dispatch(AirportSuccess(res.data))})
     .catch(()=>{AirportError()});
 }
