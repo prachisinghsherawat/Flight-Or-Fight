@@ -7,10 +7,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import {useDispatch, useSelector} from "react-redux"
-import { AirportData } from '../Redux/airport/action';
-import { useEffect } from 'react';
-import { store } from '../Redux/store';
+
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -37,13 +34,6 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 export function Home() {
 
     const dispatch = useDispatch()
-    useEffect(()=>{getData()},[])
-
-    const data = useSelector((store) => store.airport.Airports)
-    
-    const getData = () => {
-        dispatch(AirportData())
-    }
 
   return (
     <TableContainer component={Paper}>
@@ -51,17 +41,17 @@ export function Home() {
         <TableHead>
           <TableRow>
             <StyledTableCell>Airport Image</StyledTableCell>
-            <StyledTableCell  align="center">Airport Name</StyledTableCell>
+            <StyledTableCell align="right">Airport Name</StyledTableCell>
             
           </TableRow>
         </TableHead>
         <TableBody>
           {data.map((el) => (
             <StyledTableRow key={el._id}>
-              <StyledTableCell className ="imgBox" component="th" scope="row">
-                <img id='img' src={el.imgUrl}/>
+              <StyledTableCell component="th" scope="row">
+                {el.imgUrl}
               </StyledTableCell>
-              <StyledTableCell style={{fontSize : "20px"}} align="center" >{el.airport}</StyledTableCell>
+              <StyledTableCell align="right">{el.airport}</StyledTableCell>
               
             </StyledTableRow>
           ))}

@@ -29,3 +29,13 @@
   margin-right: 8%;
   color:  black;
 }
+
+.imgBox{
+  height: 260px;
+  width: 30%;
+}
+
+#img{
+  height: 100%;
+  width: 100%;
+}

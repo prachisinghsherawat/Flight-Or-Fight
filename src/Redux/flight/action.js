@@ -20,10 +20,10 @@ const FlightError = () => ({
     type : FLIGHT_ERROR
 })
 
-export const FlightData = () => (dispatch) => {
+export const FlightData = (id) => (dispatch) => {
     
     FlightLoading();
     axios.get(`http://localhost:8080/airports/flights/${id}`).then((res)=>{dispatch(FlightSuccess(res.data))})
     .catch(()=>{FlightError()})
-    
+
 }
