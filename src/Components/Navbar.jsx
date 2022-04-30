@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Nav , Navbar,NavDropdown, Container ,Button , Form , FormControl } from "react-bootstrap"
+import {Nav , Navbar, Container ,Button , Form , FormControl } from "react-bootstrap"
 
 export const NavbarIs = () => {
 
@@ -16,7 +16,9 @@ export const NavbarIs = () => {
         navbarScroll
       >
         <Nav.Link href="#action1">
-          <a id='atag' href="/">Home</a>
+          <a id='atag' href="/">HOME</a>
+          <a id='atag' href="/airports">AIRPORTS</a>
+          <a id='atag' href="/airports/flights">FLIGHTS</a>
         </Nav.Link>
       </Nav>
       <Form className="d-flex">
