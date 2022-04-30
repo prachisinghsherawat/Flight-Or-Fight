@@ -7,7 +7,7 @@ export const NavbarIs = () => {
     return(
         <Navbar  bg="light" expand="lg">
   <Container className='navbar' fluid>
-    <Navbar.Brand href="#">FLIGHT-FIGHT</Navbar.Brand>
+    <Navbar.Brand href="#"><b>FLIGHT-FIGHT</b></Navbar.Brand>
     <Navbar.Toggle aria-controls="navbarScroll" />
     <Navbar.Collapse id="navbarScroll">
       <Nav
@@ -15,7 +15,9 @@ export const NavbarIs = () => {
         style={{ maxHeight: '100px' }}
         navbarScroll
       >
-        <Nav.Link href="#action1">Home</Nav.Link>
+        <Nav.Link href="#action1">
+          <a id='atag' href="/">Home</a>
+        </Nav.Link>
       </Nav>
       <Form className="d-flex">
         <FormControl
