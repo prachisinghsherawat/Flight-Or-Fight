@@ -59,7 +59,7 @@ export function AddAirports() {
 
 
     <Stack spacing={2} direction="row">
-      <Button id='button' onClick={HandleSubmit} variant="contained">Contained</Button>
+      <Button id='button' onClick={HandleSubmit} variant="contained">SUBMIT</Button>
     </Stack>
 
 
