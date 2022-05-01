@@ -11,6 +11,7 @@ import {useDispatch, useSelector} from "react-redux"
 import { AirportData } from '../Redux/airport/action';
 import { useEffect } from 'react';
 import { store } from '../Redux/store';
+import { useNavigate } from 'react-router-dom';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -39,6 +40,8 @@ export function Home() {
     const dispatch = useDispatch()
     useEffect(()=>{getData()},[])
 
+    const navigate = useNavigate()
+
     const data = useSelector((store) => store.airport.Airports)
     
     const getData = () => {
@@ -57,7 +60,7 @@ export function Home() {
         </TableHead>
         <TableBody>
           {data.map((el) => (
-            <StyledTableRow key={el._id}>
+            <StyledTableRow onClick={() => navigate(`/airports/flights/${el._id}`)} key={el._id}>
               <StyledTableCell className ="imgBox" component="th" scope="row">
                 <img id='img' src={el.imgUrl}/>
               </StyledTableCell>
