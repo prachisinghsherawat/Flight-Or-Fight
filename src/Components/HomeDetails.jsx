@@ -12,6 +12,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { FlightData } from "../Redux/flight/action"
 import { store } from '../Redux/store';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
 
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -51,7 +55,35 @@ export function HomeDetails() {
     dispatch(FlightData(id))
   }
 
+  // -------------------------------------------------------------------------------------------
+
+  // const [age, setAge] = React.useState('');
+
+  // const handleChange = (event) => {
+  //   setAge(event.target.value);
+  // };
+
   return (
+
+    <>
+    {/* <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
+      <InputLabel id="demo-select-small">Age</InputLabel>
+      <Select
+        labelId="demo-select-small"
+        id="demo-select-small"
+        value={age}
+        label="Age"
+        onChange={handleChange}
+      >
+        <MenuItem value="">
+          <em>None</em>
+        </MenuItem>
+        <MenuItem value={10}>Ten</MenuItem>
+        <MenuItem value={20}>Twenty</MenuItem>
+        <MenuItem value={30}>Thirty</MenuItem>
+      </Select>
+    </FormControl> */}
+ 
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 700 }} aria-label="customized table">
         <TableHead>
@@ -88,5 +120,7 @@ export function HomeDetails() {
         </TableBody>
       </Table>
     </TableContainer>
+
+    </>
   );
 }
